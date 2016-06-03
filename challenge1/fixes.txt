@@ -1,0 +1,23 @@
+Fix #1: in app.js the controller linked to the settings route was typo'd. Instead of settingsCtrl it was settingsctrl.
+
+Fix #2: there was a closing curly bracket missing in productsCtrl on line 10
+
+Fix #3: app.js states were missing brackets and structured incorrectly. Originally they were structured as
+
+".state('routeName') {
+    routeInfo
+}"
+
+The correct structure is:
+
+".state('routeName', {
+  routeInfo
+})"
+
+.state takes in a routename string, and an object with routeOptions separated by a comma.
+
+Fix #4: The ui router dependency in app.js was incorrectly spelled ui-router instead of ui.router. Period not hyphen.
+
+Fix #5: added otherwise to routes
+
+Fix #6: script tag wasn't closed in index file when bringing in angular ui router. My syntax theme screwed me over on this one. I spent almost the entire hour looking but I couldn't see any difference because all my text is green.
